@@ -147,7 +147,7 @@
 
 			.hero-text h1 {
 				font-family: 'Playfair Display', serif;
-				font-size: clamp(2.8rem, 4.2vw, 3.6rem);
+				font-size: clamp(2.8rem, 4.2vw, 3rem);
 				line-height: 1.1;
 				margin: 18px 0 14px;
 			}
@@ -201,6 +201,8 @@
 				background: #fff;
 				color: var(--dark);
 				box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+				outline: none;
+				text-decoration: none;
 			}
 
 			.btn-primary:hover {
@@ -500,7 +502,7 @@
 
 			.invite-names {
 				font-family: 'Playfair Display', serif;
-				font-size: 2rem;
+				font-size: 1.75rem;
 				color: #3b2240;
 				margin-bottom: 4px;
 			}
@@ -1088,9 +1090,7 @@
 	</head>
 	<body>
 		<!-- Optional background music (thay link mp3 nếu bạn có) -->
-		<audio id="bg-music" loop>
-			<!-- <source src="your-music-url.mp3" type="audio/mpeg" /> -->
-		</audio>
+		<audio id="bg-music" loop src="tinhchangythiep.mp3"></audio>
 
 		<!-- POPUP MỞ THIỆP -->
 		<div class="invite-overlay" id="inviteOverlay">
@@ -1102,7 +1102,9 @@
 					Trân trọng kính mời bạn đến chung vui cùng chúng tôi trong
 					ngày trọng đại này.
 				</p>
-				<button class="btn btn-primary" id="openInviteBtn">MỞ THIỆP</button>
+				<button class="btn btn-primary" id="openInviteBtn">
+					MỞ THIỆP
+				</button>
 				<div class="invite-hint">
 					Nhấn “Mở thiệp” để vào xem toàn bộ nội dung
 				</div>
@@ -1218,7 +1220,7 @@
 			<div class="wrapper">
 				<div class="section-heading reveal">
 					<div class="section-subtitle">Chúng tôi</div>
-					<h2 class="section-title">Cô dâu &amp; Chú rể</h2>
+					<h2 class="section-title">Tân Nương &amp; Tân Lang</h2>
 				</div>
 
 				<div class="couple-grid">
@@ -1228,7 +1230,7 @@
 						</div>
 						<div>
 							<div class="couple-name">Thiên Hà</div>
-							<div class="couple-role">Cô dâu</div>
+							<div class="couple-role">Tân Nương</div>
 							<p class="couple-desc">
 								Dịu dàng, tinh tế và luôn tràn đầy năng lượng
 								tích cực. Linh yêu những buổi chiều hoàng hôn
@@ -1244,7 +1246,7 @@
 						</div>
 						<div>
 							<div class="couple-name">Thành Huỳnh</div>
-							<div class="couple-role">Chú rể</div>
+							<div class="couple-role">Tân Lang</div>
 							<p class="couple-desc">
 								Ấm áp, chân thành và luôn biết cách tạo bất ngờ.
 								Khoa yêu những chuyến đi xa và tin rằng hạnh
@@ -1365,7 +1367,7 @@
 						</p>
 						<p class="event-note">
 							Bữa tiệc ấm cúng cùng ánh đèn, âm nhạc và những lời
-							chúc tốt đẹp dành cho cô dâu chú rể.
+							chúc tốt đẹp dành cho tân lang, tân nương.
 						</p>
 					</div>
 				</div>
@@ -1405,30 +1407,32 @@
 		</section>
 
 		<!-- QR CODE SECTION -->
-		<section class="qr-section" id="qr">
+		<!-- THANK YOU SECTION -->
+		<section class="thank-section" id="thankyou">
 			<div class="wrapper">
 				<div class="section-heading reveal">
-					<div class="section-subtitle">Hỗ trợ</div>
-					<h2 class="section-title">Mã QR Chuyển Khoản</h2>
+					<div class="section-subtitle">Trân trọng</div>
+					<h2 class="section-title">Lời cảm ơn</h2>
 				</div>
 
-				<div class="qr-card reveal">
-					<p class="qr-text">
-						Nếu bạn muốn gửi lời chúc đến cô dâu chú rể qua hình
-						thức chuyển khoản, vui lòng quét mã QR bên dưới. Xin
-						chân thành cảm ơn tấm lòng của bạn ❤️
+				<div class="thank-card reveal">
+					<p class="thank-text">
+						Tân nương <strong>Thiên Hà</strong> và Tân Lang
+						<strong>Thành Huỳnh</strong> xin gửi lời cảm ơn chân
+						thành đến gia đình, người thân và bạn bè đã dành thời
+						gian quý báu để đến chung vui cùng chúng tôi.
 					</p>
 
-					<div class="qr-image-wrap">
-						<!-- 👉 Thay ảnh QR thật của bạn ở đây -->
-						<img src="QR_Code_Example.svg" alt="QR Code" class="qr-image" />
-					</div>
+					<p class="thank-text">
+						Sự hiện diện của bạn là món quà vô giá, góp phần làm nên
+						một ngày thật trọn vẹn và hạnh phúc.
+					</p>
 
-					<!-- <div class="qr-note">
-						Ngân hàng: <strong>Vietcombank</strong><br />
-						Chủ tài khoản: <strong>Trần Minh Khoa</strong><br />
-						Số tài khoản: <strong>0123 456 789</strong>
-					</div> -->
+					<p class="thank-sig">
+						Với tất cả yêu thương ❤️
+						<br />
+						Linh &amp; Khoa
+					</p>
 				</div>
 			</div>
 		</section>
