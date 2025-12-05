@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<title>Wedding Thiên Hà - Thành Huỳnh</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
 		<!-- Google Fonts -->
 		<link
 			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap"
@@ -129,7 +130,7 @@
 			.hero-inner {
 				position: relative;
 				z-index: 2;
-				padding: 120px 0 80px;
+				padding: 100px 0 80px;
 			}
 
 			.hero-content {
@@ -1076,7 +1077,9 @@
 					min-height: 100vh;
 				}
 				.hero-inner {
-					padding-top: 90px;
+					padding-top: 48px;
+					padding-left: 24px;
+					padding-right: 24px;
 				}
 				.hero-cta {
 					flex-direction: column;
@@ -1086,9 +1089,44 @@
 					bottom: 14px;
 				}
 			}
+
+			/* ---------- FLOATING HEARTS ---------- */
+			.hearts-container {
+				pointer-events: none;
+				position: fixed;
+				inset: 0;
+				overflow: hidden;
+				z-index: 2; /* dưới popup mở thiệp, trên nền */
+			}
+
+			.heart {
+				position: absolute;
+				bottom: -40px; /* ➜ xuất phát từ dưới màn hình */
+				color: #ff7aa8;
+				font-size: 18px;
+				opacity: 0;
+				animation: floatUp 4.5s linear forwards;
+				filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+			}
+
+			@keyframes floatUp {
+				0% {
+					transform: translateY(0) scale(0.8);
+					opacity: 0;
+				}
+				20% {
+					opacity: 1;
+				}
+				100% {
+					transform: translateY(-120vh) scale(1.3);
+					opacity: 0;
+				}
+			}
 		</style>
 	</head>
 	<body>
+		<div class="hearts-container"></div>
+
 		<!-- Optional background music (thay link mp3 nếu bạn có) -->
 		<audio id="bg-music" loop src="tinhchangythiep.mp3"></audio>
 
@@ -1203,7 +1241,7 @@
 									Cinématic Wedding
 								</div>
 							</div>
-							<div class="hero-location">Biện Kinh</div>
+							<!-- <div class="hero-location">Biện Kinh</div> -->
 						</div>
 					</div>
 				</div>
@@ -1640,6 +1678,38 @@
 				if (e.key === 'Escape') closeLightbox();
 				if (e.key === 'ArrowLeft') showPrev();
 				if (e.key === 'ArrowRight') showNext();
+			});
+
+			// -------- FLOATING HEARTS --------
+			window.addEventListener('DOMContentLoaded', function () {
+				const heartsContainer =
+					document.querySelector('.hearts-container');
+				if (!heartsContainer) return; // phòng khi gõ nhầm class
+
+				function createHeart() {
+					const heart = document.createElement('div');
+					heart.className = 'heart';
+					heart.innerHTML = '❤';
+
+					// vị trí ngang ngẫu nhiên
+					heart.style.left = Math.random() * 100 + 'vw';
+
+					// kích thước ngẫu nhiên
+					const size = 18 + Math.random() * 12;
+					heart.style.fontSize = size + 'px';
+
+					// thời gian bay ngẫu nhiên
+					heart.style.animationDuration =
+						3.5 + Math.random() * 3 + 's';
+
+					heartsContainer.appendChild(heart);
+
+					// xóa sau khi bay xong
+					setTimeout(() => heart.remove(), 6000);
+				}
+
+				// tạo trái tim đều đặn
+				setInterval(createHeart, 700);
 			});
 		</script>
 	</body>
